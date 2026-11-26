@@ -16,7 +16,7 @@ IMAGES = {
     'hero': 'hero.jpg', 'living': 'living.jpg', 'office': 'office.jpg', 'office2': 'office2.jpg',
     'conf': 'conf.jpg', 'garden': 'garden.jpg', 'garden2': 'garden2.jpg', 'coffee': 'coffee.jpg',
     'kitchen': 'kitchen.jpg', 'hall': 'hall.jpg', 'sign': 'sign.jpg', 'mail': 'mail.jpg',
-    'openoffice': 'openoffice.jpg',
+    'openoffice': 'openoffice.jpg', 'og': 'og.jpg', 'og_es': 'og-es.jpg',
 }
 
 ICONS = {
@@ -203,7 +203,12 @@ def page(t):
 <meta property="og:type" content="website">
 <meta property="og:title" content="{esc(t['title'])}">
 <meta property="og:description" content="{esc(t['desc'])}">
-<meta property="og:image" content="https://www.thedivproject.com/assets/hero.jpg">
+<meta property="og:image" content="https://www.thedivproject.com/assets/{'og-es.jpg' if t['lang']=='es' else 'og.jpg'}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="The Div Project">
+<meta property="og:locale" content="{'es_US' if t['lang']=='es' else 'en_US'}">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://www.thedivproject.com{t['path']}">
 <meta name="theme-color" content="#0A4F5C">
 <link rel="icon" href="{a}assets/favicon.svg" type="image/svg+xml">
